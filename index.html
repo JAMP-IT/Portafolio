@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>José Alfredo Montes Paredes | CV & Portafolio Integral</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="Js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="Css/styles.css" />
+</head>
+<body class="bg-tech-grid selection:bg-sky-500/30 selection:text-white">
+
+  <!-- Barra de navegación superior fija -->
+  <header class="sticky top-0 z-40 border-b border-slate-400/15 bg-[#070b12]/85 backdrop-blur-xl no-print">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+      <a href="#top" class="flex items-center gap-3 group">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-sky-400/40 bg-[#111c33] text-sm font-extrabold tracking-tight text-sky-400 shadow-glow transition group-hover:border-sky-300 group-hover:text-white">
+          JM
+        </div>
+        <div class="leading-tight">
+          <div class="text-sm font-bold text-white tracking-wide">José A. Montes Paredes</div>
+          <div class="text-[11px] font-medium text-sky-300/90">Ing. en Sistemas · Datos · ISO & DC-3</div>
+        </div>
+      </a>
+
+      <!-- Navegación escritorio -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold tracking-wide text-slate-300">
+        <a href="#habilidades" class="hover:text-sky-400 transition">Habilidades</a>
+        <a href="#experiencia" class="hover:text-sky-400 transition">Experiencia</a>
+        <a href="#brisa-marina" class="hover:text-sky-400 transition">Brisa Marina & Docencia</a>
+        <a href="#dc3" class="hover:text-sky-400 transition">Constancias DC-3</a>
+        <a href="#formacion" class="hover:text-sky-400 transition">Formación & Certs</a>
+      </nav>
+
+      <!-- Acciones rápidas -->
+      <div class="flex items-center gap-2.5">
+        <button
+          type="button"
+          data-action="print"
+          class="inline-flex items-center gap-2 rounded-xl border border-sky-400/40 bg-[#111c33] px-3.5 py-2 text-xs font-semibold text-white transition hover:border-sky-300 hover:bg-[#162440] active:scale-[0.99]"
+          title="Imprimir o guardar CV como PDF"
+        >
+          <svg class="h-4 w-4 text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          </svg>
+          <span class="hidden sm:inline">Imprimir / PDF</span>
+        </button>
+
+        <button
+          id="menu-toggle-btn"
+          type="button"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+          class="inline-flex md:hidden items-center justify-center rounded-xl border border-slate-400/20 bg-[#111c33] p-2.5 text-slate-200 hover:border-sky-400/40 hover:text-white"
+        >
+          <svg id="menu-icon-open" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="menu-icon-close" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-400/15 bg-[#0c1322] px-4 py-3 space-y-1.5 text-sm font-medium text-slate-200">
+      <a href="#habilidades" class="block rounded-lg px-3 py-2 hover:bg-[#162440] hover:text-sky-400">Habilidades Técnicas y Blandas</a>
+      <a href="#experiencia" class="block rounded-lg px-3 py-2 hover:bg-[#162440] hover:text-sky-400">Experiencia Laboral y Emprendimiento</a>
+      <a href="#brisa-marina" class="block rounded-lg px-3 py-2 hover:bg-[#162440] hover:text-sky-400">Lonchería Brisa Marina & Docencia</a>
+      <a href="#dc3" class="block rounded-lg px-3 py-2 hover:bg-[#162440] hover:text-sky-400">Apartado Especial DC-3 (2022–2026)</a>
+      <a href="#formacion" class="block rounded-lg px-3 py-2 hover:bg-[#162440] hover:text-sky-400">Formación Académica y Certificaciones</a>
+    </div>
+  </header>
+
+  <!-- Notificación tipo toast (sin alert) -->
+  <div id="toast-banner" class="fixed bottom-5 right-5 z-50 hidden max-w-sm rounded-2xl border border-sky-400/40 bg-[#111c33]/95 px-4 py-3 text-xs font-medium text-white shadow-2xl backdrop-blur-md no-print">
+    <div class="flex items-center gap-2.5">
+      <span class="h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+      <span id="toast-message">Dato copiado al portapapeles.</span>
+    </div>
+  </div>
+
+  <article id="print-resume" class="print-resume" aria-label="Currículum resumido para impresión">
+    <header class="print-resume-header">
+      <div>
+        <p class="print-resume-eyebrow">Currículum vitae</p>
+        <h1>José Alfredo Montes Paredes</h1>
+        <p class="print-resume-role">Ingeniero en Sistemas Computacionales · Analítica de Datos · Docencia STEM</p>
+      </div>
+      <address class="print-resume-contact">
+        <a href="mailto:josealfredomp1@outlook.com">josealfredomp1@outlook.com</a>
+        <span>22-9129-0244</span>
+        <span>Veracruz, Ver., México</span>
+      </address>
+    </header>
+
+    <section class="print-resume-section">
+      <h2>Perfil profesional</h2>
+      <p>
+        Ingeniero en Sistemas Computacionales enfocado en analítica de datos, automatización y mejora de procesos. Experiencia en docencia STEM, desarrollo de soluciones digitales, operación empresarial y entornos industriales. En Tenaris TAMSA desarrollé APIs, tableros Power BI, scripts y aplicaciones Power Apps; también cuento con experiencia en auditoría operativa y seguridad portuaria.
+      </p>
+    </section>
+
+    <section class="print-resume-section">
+      <h2>Experiencia reciente</h2>
+      <div class="print-resume-jobs">
+        <article class="print-resume-job">
+          <div class="print-resume-job-heading">
+            <h3>Colegio Bilingüe El Báltico</h3>
+            <span>2026–2027 · Actualidad</span>
+          </div>
+          <p class="print-resume-job-title">Profesor de Secundaria y Bachillerato · TICs, STEM y Algoritmos</p>
+          <ul>
+            <li>Impartición de Física, Matemáticas y Algoritmos con énfasis en pensamiento lógico y aprendizaje práctico.</li>
+            <li>Diseño y asesoría de proyectos de Mecatrónica, robótica e ingeniería aplicada.</li>
+            <li>Integración de inteligencia artificial responsable y metodologías ágiles en proyectos educativos.</li>
+          </ul>
+        </article>
+        <article class="print-resume-job">
+          <div class="print-resume-job-heading">
+            <h3>Lonchería Brisa Marina Pescadería</h3>
+            <span>Veracruz, Ver.</span>
+          </div>
+          <p class="print-resume-job-title">Fundador y empresario</p>
+          <ul>
+            <li>Dirección integral del negocio y gestión de proveedores, costos, inventarios y atención al cliente.</li>
+            <li>Control de cadena de frío, frescura y calidad de productos del mar.</li>
+            <li>Estandarización de operación e higiene, control de mermas y liderazgo de equipo.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="print-resume-columns">
+      <section class="print-resume-section">
+        <h2>Competencias clave</h2>
+        <p><strong>Datos y automatización:</strong> Power BI, Excel avanzado, APIs, Python, Power Apps y desarrollo web.</p>
+        <p><strong>Operación e industria:</strong> SAP PP/MM, auditoría operativa, mejora continua y control de inventarios.</p>
+        <p><strong>Seguridad y calidad:</strong> 22+ constancias DC-3; auditoría interna ISO 9001, 14001, 19011, 22000, 31000 y 45001.</p>
+        <p><strong>Competencias:</strong> liderazgo, comunicación técnica, análisis y resolución de problemas.</p>
+      </section>
+      <section class="print-resume-section">
+        <h2>Formación y acreditaciones</h2>
+        <p><strong>Ingeniería en Sistemas Computacionales</strong> · UGMEX Campus Veracruz · 2018–2022 · Título y cédula profesional.</p>
+        <p><strong>Técnico en Diseño Gráfico y AutoCAD 2D/3D</strong> · Computación del Golfo / SEP · 2015–2021.</p>
+        <p>Tricentis Tosca Fundamentals · SAP PP Key User · Power BI · Excel avanzado · Google UX Design.</p>
+        <p><strong>Inglés:</strong> Nivel B1 · UGMEX Campus Veracruz.</p>
+      </section>
+    </div>
+  </article>
+
+  <main id="top" class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12 space-y-16">
+
+    <!-- 1. HERO / ENCABEZADO EJECUTIVO -->
+    <section class="reveal grid grid-cols-1 gap-8 lg:grid-cols-12 items-start">
+      <div class="lg:col-span-8 space-y-6 rounded-3xl border border-slate-400/20 bg-gradient-to-br from-[#111c33]/95 via-[#0c1322] to-[#070b12] p-6 sm:p-8 lg:p-10 shadow-card">
+        <div class="inline-flex flex-wrap items-center gap-2 rounded-full border border-sky-400/30 bg-sky-500/10 px-3.5 py-1.5 text-xs font-semibold text-sky-300">
+          <span class="h-2 w-2 rounded-full bg-sky-400 animate-pulse"></span>
+          <span>Ingeniero en Sistemas Computacionales · Perfil Integral Multidisciplinario</span>
+        </div>
+
+        <div class="space-y-3">
+          <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            José Alfredo <span class="text-sky-400">Montes Paredes</span>
+          </h1>
+          <p class="text-sm font-semibold text-slate-200 sm:text-base leading-relaxed">
+            Analista de Datos &amp; Desarrollador <span class="text-sky-400 mx-1">·</span>
+            Docente STEM / TICs <span class="text-sky-400 mx-1">·</span>
+            Seguridad Industrial &amp; Auditor ISO <span class="text-sky-400 mx-1">·</span>
+            Fundador de Lonchería Brisa Marina Pescadería
+          </p>
+        </div>
+
+        <p class="text-sm leading-relaxed text-slate-300 sm:text-base">
+          Ingeniero en Sistemas Computacionales con enfoque analítico orientado a transformar datos en decisiones estratégicas, automatizar procesos operativos mediante desarrollo de software y fortalecer la mejora continua en entornos industriales, educativos y empresariales. Combino experiencia en análisis de datos (Power BI, APIs, scripts y Power Apps), auditoría operativa, gestión de sistemas ISO/DC-3, docencia STEM con metodologías ágiles e inteligencia artificial ética, y dirección integral como fundador y empresario de <strong class="text-white font-semibold">Lonchería Brisa Marina Pescadería</strong> en Veracruz, México.
+        </p>
+
+        <!-- Indicadores clave rápidos -->
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 pt-1">
+          <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+            <div class="text-xl font-extrabold text-sky-400 sm:text-2xl">22+</div>
+            <div class="text-[11px] font-medium text-slate-300">Constancias DC-3 (2022–2026)</div>
+          </div>
+          <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+            <div class="text-xl font-extrabold text-white sm:text-2xl">6</div>
+            <div class="text-[11px] font-medium text-slate-300">Normas ISO Auditadas</div>
+          </div>
+          <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+            <div class="text-xl font-extrabold text-sky-400 sm:text-2xl">STEM</div>
+            <div class="text-[11px] font-medium text-slate-300">Docencia Sec. &amp; Bachillerato</div>
+          </div>
+          <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+            <div class="text-xl font-extrabold text-white sm:text-2xl">B1</div>
+            <div class="text-[11px] font-medium text-slate-300">Inglés · UGMEX Veracruz</div>
+          </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="flex flex-wrap items-center gap-3 pt-2 no-print">
+          <a
+            href="#experiencia"
+            class="inline-flex items-center gap-2 rounded-xl bg-sky-500 px-5 py-3 text-xs sm:text-sm font-bold text-[#070b12] shadow-lg shadow-sky-500/20 transition hover:bg-sky-400 active:scale-[0.99]"
+          >
+            <span>Ver Experiencia</span>
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <a
+            href="#dc3"
+            class="inline-flex items-center gap-2 rounded-xl border border-sky-400/40 bg-[#111c33] px-5 py-3 text-xs sm:text-sm font-semibold text-white transition hover:border-sky-300 hover:bg-[#162440]"
+          >
+            <span>Constancias DC-3</span>
+          </a>
+          <button
+            type="button"
+            data-action="print"
+            class="inline-flex items-center gap-2 rounded-xl border border-slate-400/25 bg-[#0c1322] px-5 py-3 text-xs sm:text-sm font-semibold text-slate-200 transition hover:border-white/40 hover:text-white"
+          >
+            <span>Descargar / Imprimir CV</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tarjeta lateral de perfil y contacto -->
+      <aside class="lg:col-span-4 rounded-3xl border border-slate-400/20 bg-[#111c33]/95 p-6 shadow-card space-y-5 print-break-avoid">
+        <div class="flex items-center gap-4 border-b border-slate-400/15 pb-5">
+          <div class="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border-2 border-sky-400/60 bg-[#0c1322] flex items-center justify-center">
+            <!-- Retrato ejecutivo estilizado en SVG -->
+            <svg viewBox="0 0 80 80" class="h-full w-full" aria-label="Avatar profesional José Alfredo Montes Paredes">
+              <rect width="80" height="80" fill="#0c1322" />
+              <circle cx="40" cy="30" r="14" fill="#38bdf8" opacity="0.25" />
+              <circle cx="40" cy="29" r="11" fill="#e2e8f0" />
+              <!-- Lentes -->
+              <rect x="30" y="25" width="8.5" height="6" rx="1.5" fill="none" stroke="#0f172a" stroke-width="1.6" />
+              <rect x="41.5" y="25" width="8.5" height="6" rx="1.5" fill="none" stroke="#0f172a" stroke-width="1.6" />
+              <line x1="38.5" y1="28" x2="41.5" y2="28" stroke="#0f172a" stroke-width="1.6" />
+              <!-- Saco y camisa -->
+              <path d="M16 74 C18 54, 28 46, 40 46 C52 46, 62 54, 64 74 Z" fill="#1e3a8a" />
+              <path d="M34 46 L40 62 L46 46 Z" fill="#bae6fd" />
+              <path d="M26 49 L40 72 L54 49" fill="none" stroke="#38bdf8" stroke-width="2" />
+            </svg>
+          </div>
+          <div>
+            <div class="text-xs font-semibold uppercase tracking-wider text-sky-400">Perfil Profesional</div>
+            <div class="text-base font-bold text-white">José Alfredo Montes Paredes</div>
+            <div class="text-xs text-slate-300">Veracruz, Ver. México</div>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-xs sm:text-sm">
+          <div class="flex items-center justify-between gap-2 rounded-xl bg-[#0c1322] p-3 border border-slate-400/10">
+            <div class="min-w-0">
+              <div class="text-[11px] text-slate-400">Correo electrónico</div>
+              <a href="mailto:josealfredomp1@outlook.com" class="truncate block font-medium font-mono tracking-tight text-white hover:text-sky-400">
+                josealfredomp1@outlook.com
+              </a>
+            </div>
+            <button
+              type="button"
+              data-copy="josealfredomp1@outlook.com" data-feedback="Correo copiado al portapapeles"
+              class="shrink-0 rounded-lg border border-slate-400/20 bg-[#111c33] px-2.5 py-1.5 text-[11px] font-semibold text-sky-300 hover:border-sky-400/50 hover:text-white no-print"
+            >
+              Copiar
+            </button>
+          </div>
+
+          <div class="flex items-center justify-between gap-2 rounded-xl bg-[#0c1322] p-3 border border-slate-400/10">
+            <div>
+              <div class="text-[11px] text-slate-400">Teléfono / Celular</div>
+              <a href="tel:+522291290244" class="font-medium text-white hover:text-sky-400">
+                22-9129-0244
+              </a>
+            </div>
+            <button
+              type="button"
+              data-copy="22-9129-0244" data-feedback="Teléfono copiado al portapapeles"
+              class="shrink-0 rounded-lg border border-slate-400/20 bg-[#111c33] px-2.5 py-1.5 text-[11px] font-semibold text-sky-300 hover:border-sky-400/50 hover:text-white no-print"
+            >
+              Copiar
+            </button>
+          </div>
+
+          <div class="rounded-xl bg-[#0c1322] p-3 border border-slate-400/10">
+            <div class="text-[11px] text-slate-400">Ubicación</div>
+            <div class="font-medium text-white">Veracruz, Ver. México</div>
+          </div>
+
+          <div class="rounded-xl bg-[#0c1322] p-3 border border-slate-400/10">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] text-slate-400">Idioma</span>
+              <span class="rounded-full bg-sky-500/15 px-2.5 py-0.5 text-[11px] font-semibold text-sky-300">Nivel B1</span>
+            </div>
+            <div class="mt-0.5 font-medium text-white">Inglés B1 — UGMEX Campus Veracruz</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- 2. RESUMEN DE HABILIDADES (TÉCNICAS Y BLANDAS) -->
+    <section id="habilidades" class="reveal space-y-6">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between border-b border-slate-400/15 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Competencias Integrales</span>
+          <h2 class="text-2xl font-extrabold text-white sm:text-3xl">Resumen de Habilidades</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+          Separación estructurada entre dominio técnico aplicado y competencias humanas, de liderazgo y gestión operativa.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <!-- Habilidades Técnicas -->
+        <div class="lg:col-span-8 rounded-3xl border border-slate-400/20 bg-[#0c1322]/90 p-6 sm:p-8 space-y-6 shadow-card print-break-avoid">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/30">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white">Habilidades Técnicas</h3>
+              <p class="text-xs text-slate-400">Datos, desarrollo, sistemas ERP, ingeniería, diseño y normatividad industrial</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <!-- Bloque 1 -->
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33]/85 p-4 space-y-2.5">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Análisis de Datos &amp; BI</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Power BI</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Excel Avanzado</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Control Estadístico de Procesos</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Transformación de Datos</span>
+              </div>
+            </div>
+
+            <!-- Bloque 2 -->
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33]/85 p-4 space-y-2.5">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Desarrollo &amp; Automatización</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">APIs de Consulta de Datos</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Scripts de Automatización</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Power Apps</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Python</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Desarrollo Web (HTML/CSS/JS)</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Automatización de Flujos</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Tricentis Tosca Fundamentals</span>
+              </div>
+            </div>
+
+            <!-- Bloque 3 -->
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33]/85 p-4 space-y-2.5">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">ERP &amp; Gestión Operativa</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">SAP PP (Key User)</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">SAP MM</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Auditoría Operativa</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Conteo Físico &amp; Inventarios</span>
+              </div>
+            </div>
+
+            <!-- Bloque 4 -->
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33]/85 p-4 space-y-2.5">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-sky-400">Ingeniería, Diseño &amp; Seguridad</h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Mecatrónica</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Electrónica Básica/Media</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Proteus ISIS</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">AutoCAD 2D/3D</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Diseño Gráfico</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Google UX Design</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">Auditoría ISO 9001, 14001, 19011, 22000, 31000, 45001</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">NOM / SEMARNAT / ECOL</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">PTAR &amp; Agua Residual</span>
+                <span class="rounded-lg border border-sky-400/25 bg-[#070b12] px-2.5 py-1 text-xs text-slate-100">LOTO · Alturas · Riesgo Eléctrico · Primeros Auxilios</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Habilidades Blandas -->
+        <div class="lg:col-span-4 rounded-3xl border border-slate-400/20 bg-[#111c33]/90 p-6 sm:p-8 space-y-5 shadow-card print-break-avoid">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/15 text-sky-400 border border-sky-400/30">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white">Habilidades Blandas</h3>
+              <p class="text-xs text-slate-400">Liderazgo, criterio y ejecución en campo</p>
+            </div>
+          </div>
+
+          <ul class="space-y-3 text-xs sm:text-sm">
+            <li class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+              <div class="font-bold text-white">Pensamiento Analítico</div>
+              <p class="text-slate-300 text-xs mt-0.5">Diagnóstico estructurado de datos, procesos y fallas operativas para soluciones precisas.</p>
+            </li>
+            <li class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+              <div class="font-bold text-white">Autodidacta</div>
+              <p class="text-slate-300 text-xs mt-0.5">Aprendizaje continuo y ágil en nuevas herramientas tecnológicas, normativas y metodologías.</p>
+            </li>
+            <li class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+              <div class="font-bold text-white">Comunicación Efectiva</div>
+              <p class="text-slate-300 text-xs mt-0.5">Traducción clara de conceptos técnicos a reportes directivos, aulas y protocolos de seguridad.</p>
+            </li>
+            <li class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+              <div class="font-bold text-white">Trabajo Bajo Presión</div>
+              <p class="text-slate-300 text-xs mt-0.5">Templanza y precisión en operaciones portuarias, auditorías, cierres operativos y picos de demanda.</p>
+            </li>
+            <li class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+              <div class="font-bold text-white">Liderazgo y Gestión de Equipos</div>
+              <p class="text-slate-300 text-xs mt-0.5">Coordinación de equipos estudiantiles, personal operativo y colaboradores en negocio propio.</p>
+            </li>
+            <li class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+              <div class="font-bold text-white">Resolución de Problemas y Toma de Decisiones</div>
+              <p class="text-slate-300 text-xs mt-0.5">Evaluación de riesgos y priorización de acciones con enfoque pragmático y medible.</p>
+            </li>
+            <li class="rounded-2xl border border-slate-400/15 bg-[#0c1322]/90 p-3.5">
+              <div class="font-bold text-white">Mejora Continua y Enfoque al Cliente / Emprendimiento</div>
+              <p class="text-slate-300 text-xs mt-0.5">Optimización constante de estándares, calidad de servicio y visión empresarial sostenible.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EXPERIENCIA LABORAL Y EMPRENDIMIENTO -->
+    <section id="experiencia" class="reveal space-y-6">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between border-b border-slate-400/15 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Trayectoria Profesional y Empresarial</span>
+          <h2 class="text-2xl font-extrabold text-white sm:text-3xl">Experiencia Laboral y Emprendimiento</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+          Experiencia ampliada y estructurada en educación STEM, dirección de negocio propio, analítica de datos, seguridad portuaria y auditoría operativa.
+        </p>
+      </div>
+
+      <div class="space-y-5">
+        <!-- Experiencia 1: Colegio Bilingüe El Báltico -->
+        <article class="rounded-3xl border border-slate-400/20 bg-[#111c33]/90 p-6 sm:p-7 shadow-card print-break-avoid">
+          <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-slate-400/15 pb-4">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-sky-500/15 px-3 py-0.5 text-[11px] font-bold text-sky-300 mb-1.5">
+                Docencia STEM &amp; TICs
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Colegio Bilingüe El Báltico (Riviera Veracruzana, Veracruz)</h3>
+              <p class="text-sm font-semibold text-sky-400">Profesor Nivel Secundaria y Bachillerato — Ciclo 2026–2027 / Actualidad</p>
+            </div>
+            <span class="self-start md:self-center rounded-xl border border-slate-400/20 bg-[#0c1322] px-3 py-1.5 text-xs font-semibold text-slate-200">
+              Ciclo 2026–2027 · Actualidad
+            </span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-xs sm:text-sm text-slate-200">
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span><strong>Liderazgo en Proyectos de Ingeniería:</strong> Diseño, asesoría y supervisión de proyectos integradores de Mecatrónica, robótica e ingeniería aplicada.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span><strong>Innovación Educativa:</strong> Implementación de la asignatura de Algoritmos, integrando el uso ético y consciente de la Inteligencia Artificial bajo metodologías ágiles.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span><strong>Cátedra STEM:</strong> Impartición de Física y Matemáticas aplicando didácticas dinámicas y prácticas que facilitan la comprensión y el pensamiento lógico.</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Experiencia 2: Lonchería Brisa Marina Pescadería -->
+        <article class="rounded-3xl border border-sky-400/35 bg-gradient-to-r from-[#111c33] via-[#162440]/85 to-[#0c1322] p-6 sm:p-7 shadow-card print-break-avoid">
+          <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-slate-400/15 pb-4">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-sky-400/20 px-3 py-0.5 text-[11px] font-bold text-sky-300 mb-1.5">
+                Emprendimiento &amp; Dirección Empresarial
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Lonchería Brisa Marina Pescadería (Veracruz, Ver.)</h3>
+              <p class="text-sm font-semibold text-sky-400">Fundador y Empresario</p>
+            </div>
+            <span class="self-start md:self-center rounded-xl border border-sky-400/30 bg-[#0c1322] px-3 py-1.5 text-xs font-semibold text-sky-300">
+              Fundador &amp; Operación Integral
+            </span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-xs sm:text-sm text-slate-200">
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Creación, puesta en marcha y dirección integral del negocio gastronómico y de pescadería en Veracruz.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Gestión de proveedores, control de cadena de frío, frescura y calidad de producto, administración de costos y atención al cliente.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Estandarización de procesos operativos, higiene, control de mermas y liderazgo directo del equipo de trabajo.</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Experiencia 3: Tenaris TAMSA -->
+        <article class="rounded-3xl border border-slate-400/20 bg-[#111c33]/90 p-6 sm:p-7 shadow-card print-break-avoid">
+          <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-slate-400/15 pb-4">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-sky-500/15 px-3 py-0.5 text-[11px] font-bold text-sky-300 mb-1.5">
+                Analítica de Datos &amp; Software Industrial
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Tenaris TAMSA</h3>
+              <p class="text-sm font-semibold text-sky-400">Analista de Datos Junior &amp; Desarrollador</p>
+            </div>
+            <span class="self-start md:self-center rounded-xl border border-slate-400/20 bg-[#0c1322] px-3 py-1.5 text-xs font-semibold text-slate-200">
+              2023–2024
+            </span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-xs sm:text-sm text-slate-200">
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Desarrollo de una API de consulta de datos relevantes para implementaciones en los sistemas internos.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Análisis de datos para generar tableros y reportes en Power BI que facilitaron la toma de decisiones estratégicas y operativas.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Codificación de scripts para automatizar procesos manuales de ejecución cotidiana y desarrollo de aplicaciones en Power Apps.</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Experiencia 4: Hutchison Ports -->
+        <article class="rounded-3xl border border-slate-400/20 bg-[#111c33]/90 p-6 sm:p-7 shadow-card print-break-avoid">
+          <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-slate-400/15 pb-4">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-sky-500/15 px-3 py-0.5 text-[11px] font-bold text-sky-300 mb-1.5">
+                Seguridad Portuaria &amp; Prevención
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Hutchison Ports</h3>
+              <p class="text-sm font-semibold text-sky-400">Firewatch — Buques Challenger, Tampa, Algoma, etc.</p>
+            </div>
+            <span class="self-start md:self-center rounded-xl border border-slate-400/20 bg-[#0c1322] px-3 py-1.5 text-xs font-semibold text-slate-200">
+              Operación Portuaria
+            </span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-xs sm:text-sm text-slate-200">
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Prevención y mitigación de posibles accidentes y factores que pudieran dar inicio a un conato de incendio durante operaciones y maniobras.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Comunicación y supervisión de normativas y reglas de uso adecuado de Equipo de Protección Personal (EPP) según las condiciones ambientales y de trabajo.</span>
+            </li>
+          </ul>
+        </article>
+
+        <!-- Experiencia 5: Bargalló Cardosos S.A. de C.V. -->
+        <article class="rounded-3xl border border-slate-400/20 bg-[#111c33]/90 p-6 sm:p-7 shadow-card print-break-avoid">
+          <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between border-b border-slate-400/15 pb-4">
+            <div>
+              <div class="inline-flex items-center gap-2 rounded-full bg-sky-500/15 px-3 py-0.5 text-[11px] font-bold text-sky-300 mb-1.5">
+                Auditoría Operativa &amp; Control de Inventarios
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Bargalló Cardosos S.A. de C.V.</h3>
+              <p class="text-sm font-semibold text-sky-400">Auditor Operativo</p>
+            </div>
+            <span class="self-start md:self-center rounded-xl border border-slate-400/20 bg-[#0c1322] px-3 py-1.5 text-xs font-semibold text-slate-200">
+              2022–2023
+            </span>
+          </div>
+          <ul class="mt-4 space-y-2.5 text-xs sm:text-sm text-slate-200">
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Implementación de un sistema de conteo físico más óptimo, reduciendo considerablemente los tiempos operativos.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Ejecución de estrategia para minimizar la problemática de material desaparecido o discrepancias derivadas de fallos en sistemas internos.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-400"></span>
+              <span>Gestión de normas de seguridad, calidad y medio ambiente ajustadas a las regulaciones de cada región auditada.</span>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. IDENTIDAD EMPRESARIAL Y DOCENCIA: LONCHERÍA BRISA MARINA PESCADERÍA & PRESENTACIÓN TICs -->
+    <section id="brisa-marina" class="reveal space-y-6">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between border-b border-slate-400/15 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Identidad Visual y Multimedia</span>
+          <h2 class="text-2xl font-extrabold text-white sm:text-3xl">Lonchería Brisa Marina Pescadería &amp; Docencia TICs</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+          Emprendimiento gastronómico en Veracruz e innovación docente en Tecnología, Algoritmos y Mecatrónica.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <!-- Tarjeta Destacada de Lonchería Brisa Marina Pescadería -->
+        <div class="lg:col-span-7 rounded-3xl border border-sky-400/35 bg-[#0c1322] p-6 sm:p-8 shadow-card space-y-6 print-break-avoid">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="rounded-full bg-sky-500/15 border border-sky-400/30 px-3 py-1 text-[11px] font-bold text-sky-300">
+                Fundador y Empresario · Veracruz, México
+              </span>
+              <h3 class="mt-2 text-xl sm:text-2xl font-extrabold text-white">Lonchería Brisa Marina Pescadería</h3>
+              <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                Dirección estratégica, control de calidad en productos del mar, cadena de frío, atención al cliente y operación diaria.
+              </p>
+            </div>
+          </div>
+
+          <!-- Marco limpio blanco/azulado resaltando el logotipo del emprendimiento -->
+          <div class="rounded-2xl border-2 border-sky-300/60 bg-gradient-to-b from-white to-sky-50 p-4 sm:p-6 shadow-inner">
+            <img src="img/Logo.png" alt="Logotipo de Lonchería Brisa Marina Pescadería" class="mx-auto h-auto w-full max-w-xl drop-shadow-md" />
+          </div>
+
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-3 text-xs">
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-3.5">
+              <div class="font-bold text-sky-400">Cadena de Frío y Calidad</div>
+              <p class="text-slate-300 mt-1">Selección diaria y conservación rigurosa de pescados y mariscos frescos.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-3.5">
+              <div class="font-bold text-sky-400">Gestión y Costos</div>
+              <p class="text-slate-300 mt-1">Control de compras, porcionamiento, inventarios y rentabilidad del negocio.</p>
+            </div>
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-3.5">
+              <div class="font-bold text-sky-400">Servicio y Liderazgo</div>
+              <p class="text-slate-300 mt-1">Atención cercana, tiempos ágiles y coordinación operativa en Veracruz.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta Interactiva de Presentación Docente / Multimedia (Colegio Bilingüe El Báltico Premium) -->
+        <div class="lg:col-span-5 rounded-3xl border border-slate-400/20 bg-[#111c33]/90 p-6 sm:p-8 shadow-card flex flex-col justify-between space-y-5 print-break-avoid">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="rounded-full bg-sky-500/15 border border-sky-400/30 px-3 py-1 text-[11px] font-bold text-sky-300">
+                Presentación Docente TICs · Ciclo 2026–2027
+              </span>
+              <span class="text-[11px] font-medium text-slate-400">Colegio Bilingüe El Báltico</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white">
+              Profesor de TICs, Algoritmos y Mecatrónica
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Bienvenida y enfoque pedagógico para el ciclo escolar <strong>2026–2027</strong>: formación en fundamentos de programación, redes, bases de datos, desarrollo web, mecatrónica e inteligencia artificial aplicada con criterio ético.
+            </p>
+
+            <!-- Escena interactiva / vista de presentación docente -->
+            <div class="rounded-2xl border border-sky-400/25 bg-[#070b12] p-4 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-400/15 pb-3">
+                <div class="flex items-center gap-2">
+                  <span class="h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+                  <span id="stage-badge" class="text-xs font-bold text-sky-300">Vista Institucional · Colegio Bilingüe El Báltico Premium</span>
+                </div>
+                <div class="flex gap-1.5 no-print">
+                  <a
+                    href="https://www.cbaltico.edu.mx/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="tab-bienvenida"
+                    class="rounded-lg bg-sky-500 px-2.5 py-1 text-[11px] font-bold text-[#070b12]"
+                  >
+                    Bienvenida
+                  </a>
+                  <button
+                    type="button"
+                    data-docente-tab="temario"
+                    id="tab-temario"
+                    class="rounded-lg border border-slate-400/25 bg-[#111c33] px-2.5 py-1 text-[11px] font-semibold text-slate-200 hover:text-white"
+                  >
+                    Ejes TICs
+                  </button>
+                </div>
+              </div>
+
+              <div id="docente-panel-bienvenida" class="space-y-3">
+                <div class="rounded-xl bg-gradient-to-br from-[#162440] to-[#0c1322] p-4 border border-slate-400/15 space-y-2.5">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-extrabold tracking-wider uppercase text-sky-400">TICs · Tecnologías de la Información y Comunicación</span>
+                    <span class="rounded bg-sky-400/15 px-2 py-0.5 text-[10px] font-bold text-sky-300">2026–2027</span>
+                  </div>
+                  <p class="text-xs text-slate-200 leading-relaxed">
+                    “Bienvenidos al Colegio Bilingüe El Báltico Premium. Como su profesor de TICs, José Montes, impulsamos el pensamiento algorítmico, el desarrollo de soluciones tecnológicas y el uso responsable de la inteligencia artificial en este ciclo 2026–2027.”
+                  </p>
+                  <div class="grid grid-cols-2 gap-2 pt-1 text-[11px] font-semibold text-slate-300">
+                    <div class="rounded-lg bg-[#070b12]/80 px-2.5 py-1.5 border border-slate-400/10">• Fundamentos de Programación</div>
+                    <div class="rounded-lg bg-[#070b12]/80 px-2.5 py-1.5 border border-slate-400/10">• Redes de Computadoras</div>
+                    <div class="rounded-lg bg-[#070b12]/80 px-2.5 py-1.5 border border-slate-400/10">• Bases de Datos</div>
+                    <div class="rounded-lg bg-[#070b12]/80 px-2.5 py-1.5 border border-slate-400/10">• Desarrollo Web &amp; IA Ética</div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="docente-panel-temario" class="hidden space-y-2.5 text-xs text-slate-200">
+                <div class="rounded-xl bg-[#111c33] p-3 border border-slate-400/15">
+                  <div class="font-bold text-sky-400">Algoritmos y Diagramas de Flujo</div>
+                  <p class="text-slate-300 mt-0.5">Inicio, lectura de datos, toma de decisiones condicionales, procesos y cierre estructurado.</p>
+                </div>
+                <div class="rounded-xl bg-[#111c33] p-3 border border-slate-400/15">
+                  <div class="font-bold text-sky-400">Proyectos Integradores de Mecatrónica</div>
+                  <p class="text-slate-300 mt-0.5">Integración de electrónica, control, lógica y metodologías ágiles en secundaria y bachillerato.</p>
+                </div>
+              </div>
+
+              <!-- Video de bienvenida del Colegio Bilingüe El Báltico -->
+              <div class="pt-1 no-print">
+                <button
+                  type="button"
+                  data-action="toggle-video"
+                  class="w-full flex items-center justify-between rounded-xl border border-sky-400/30 bg-[#111c33] px-3.5 py-2.5 text-xs font-semibold text-sky-300 hover:bg-[#162440] hover:text-white transition"
+                >
+                  <span>Reproductor institucional / docente (Bienvenida.mp4)</span>
+                  <span id="video-toggle-label">Mostrar</span>
+                </button>
+                <div id="video-player-container" class="hidden mt-3 space-y-2">
+                  <video controls preload="none" class="w-full rounded-xl border border-slate-400/20 bg-black">
+                    <source src="Video/Bienvenida.mp4" type="video/mp4" />
+                    Tu navegador no soporta reproducción de video HTML5.
+                  </video>
+                  <p class="text-[11px] text-slate-400">
+                    Video de bienvenida del Colegio Bilingüe El Báltico.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322] px-4 py-3 text-xs text-slate-300 flex items-center justify-between">
+            <span>Física · Matemáticas · Algoritmos · Mecatrónica</span>
+            <span class="font-bold text-sky-400">2026–2027</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. APARTADO ESPECIAL DE CONSTANCIAS DC-3 (2022–2026) -->
+    <section id="dc3" class="reveal space-y-6">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between border-b border-slate-400/15 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Capacitación y Adiestramiento · 2022–2026</span>
+          <h2 class="text-2xl font-extrabold text-white sm:text-3xl">Apartado Especial de Constancias DC-3</h2>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
+            Registro de 22+ constancias DC-3 y acreditaciones técnicas entre 2022 y 2026, filtrables por especialidad. Haz clic en cualquier ficha para ver detalles.
+          </p>
+        </div>
+
+        <!-- Filtros interactivos por categoría -->
+        <div class="flex flex-wrap gap-2 no-print" role="group" aria-label="Filtrar constancias DC-3">
+          <button
+            type="button"
+            data-dc3-filter="all"
+            class="dc3-filter-btn rounded-xl bg-sky-500 px-3.5 py-2 text-xs font-bold text-[#070b12] transition"
+          >
+            Todas (<span id="count-all">0</span>)
+          </button>
+          <button
+            type="button"
+            data-dc3-filter="seguridad"
+            class="dc3-filter-btn rounded-xl border border-slate-400/25 bg-[#111c33] px-3.5 py-2 text-xs font-semibold text-slate-200 hover:border-sky-400/50 hover:text-white transition"
+          >
+            Seguridad y Alto Riesgo (<span id="count-seguridad">0</span>)
+          </button>
+          <button
+            type="button"
+            data-dc3-filter="iso"
+            class="dc3-filter-btn rounded-xl border border-slate-400/25 bg-[#111c33] px-3.5 py-2 text-xs font-semibold text-slate-200 hover:border-sky-400/50 hover:text-white transition"
+          >
+            Normas ISO y Auditoría (<span id="count-iso">0</span>)
+          </button>
+          <button
+            type="button"
+            data-dc3-filter="ambiente"
+            class="dc3-filter-btn rounded-xl border border-slate-400/25 bg-[#111c33] px-3.5 py-2 text-xs font-semibold text-slate-200 hover:border-sky-400/50 hover:text-white transition"
+          >
+            Medio Ambiente y PTAR (<span id="count-ambiente">0</span>)
+          </button>
+        </div>
+      </div>
+
+      <!-- Cuadrícula dinámica de constancias DC-3 -->
+      <div id="dc3-grid" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <!-- 6. FORMACIÓN ACADÉMICA, CERTIFICACIONES Y ESPECIALIDADES -->
+    <section id="formacion" class="reveal space-y-6">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between border-b border-slate-400/15 pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-400">Credenciales y Especialización</span>
+          <h2 class="text-2xl font-extrabold text-white sm:text-3xl">Formación Académica y Certificaciones</h2>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+          Grados académicos, plataformas de software empresarial, UX, automatización de pruebas y formación industrial/técnica.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
+        <!-- Formación Académica -->
+        <div class="lg:col-span-5 rounded-3xl border border-slate-400/20 bg-[#111c33]/90 p-6 sm:p-7 space-y-4 shadow-card print-break-avoid">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <span class="h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+            Formación Académica
+          </h3>
+
+          <div class="space-y-4">
+            <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322] p-4 space-y-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-bold text-sky-400">2018–2022</span>
+                <span class="rounded bg-sky-500/15 px-2 py-0.5 text-[10px] font-semibold text-sky-300">Licenciatura</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Ingeniería en Sistemas Computacionales</h4>
+              <p class="text-xs text-slate-300">UGMEX Campus Veracruz · Título y Cédula Profesional</p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322] p-4 space-y-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-bold text-sky-400">2015–2021</span>
+                <span class="rounded bg-sky-500/15 px-2 py-0.5 text-[10px] font-semibold text-sky-300">Técnico</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Técnico en Diseño Gráfico &amp; AutoCAD (2D y 3D)</h4>
+              <p class="text-xs text-slate-300">Computación del Golfo / SEP · Modelado técnico y diseño gráfico</p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322] p-4 space-y-1">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-xs font-bold text-sky-400">Idioma</span>
+                <span class="rounded bg-sky-500/15 px-2 py-0.5 text-[10px] font-semibold text-sky-300">B1</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Inglés Nivel B1</h4>
+              <p class="text-xs text-slate-300">UGMEX Campus Veracruz (además de formación previa Nivel A1 y diplomado)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certificaciones, Especialidades y Cursos Técnicos -->
+        <div class="lg:col-span-7 rounded-3xl border border-slate-400/20 bg-[#0c1322]/95 p-6 sm:p-7 space-y-4 shadow-card print-break-avoid">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <span class="h-2.5 w-2.5 rounded-full bg-sky-400"></span>
+            Certificaciones, Especialidades y Cursos Técnicos
+          </h3>
+
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-4 space-y-1">
+              <div class="text-[11px] font-bold text-sky-400">Tricentis Academy · 2024</div>
+              <div class="text-sm font-bold text-white">Tricentis Tosca Fundamentals</div>
+              <p class="text-xs text-slate-300">Automatización de pruebas web y aseguramiento de calidad de software.</p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-4 space-y-1">
+              <div class="text-[11px] font-bold text-sky-400">Global Tecnologías Academy · 2022–2023</div>
+              <div class="text-sm font-bold text-white">SAP PP Key User (Gestión de Producción)</div>
+              <p class="text-xs text-slate-300">Planificación y control de manufactura en entorno ERP SAP.</p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-4 space-y-1">
+              <div class="text-[11px] font-bold text-sky-400">Global Tecnologías Academy · 2022–2023</div>
+              <div class="text-sm font-bold text-white">Excel Avanzado (Básico / Intermedio / Avanzado)</div>
+              <p class="text-xs text-slate-300">Análisis matricial, automatización de hojas y consolidación de datos.</p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-4 space-y-1">
+              <div class="text-[11px] font-bold text-sky-400">Global Tecnologías Academy · 2023–2024</div>
+              <div class="text-sm font-bold text-white">Power BI</div>
+              <p class="text-xs text-slate-300">Modelado de datos, métricas y visualización ejecutiva interactiva.</p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-4 space-y-1">
+              <div class="text-[11px] font-bold text-sky-400">Coursera — Google · 2022–2023</div>
+              <div class="text-sm font-bold text-white">Google UX Design</div>
+              <p class="text-xs text-slate-300">Diseño centrado en el usuario, arquitectura de información y prototipado.</p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-400/15 bg-[#111c33] p-4 space-y-1">
+              <div class="text-[11px] font-bold text-sky-400">TenarisUniversity &amp; Capacitación Técnica</div>
+              <div class="text-sm font-bold text-white">Formación Industrial, Electrónica y Gestión</div>
+              <p class="text-xs text-slate-300">SAP MM, control estadístico de procesos, 5S, interpretación de planos eléctricos, electrónica básica/media, Proteus ISIS y talleres técnicos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="border-t border-slate-400/15 pt-6 pb-10 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © <span id="current-year">2026</span> <strong class="text-slate-200">José Alfredo Montes Paredes</strong> · Veracruz, Ver. México.
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="mailto:josealfredomp1@outlook.com" class="font-mono tracking-tight hover:text-sky-400 transition">josealfredomp1@outlook.com</a>
+        <span>·</span>
+        <span>Cel: 22-9129-0244</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modal de detalle para Constancias DC-3 -->
+  <div id="detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 p-4 backdrop-blur-sm no-print" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="w-full max-w-lg rounded-3xl border border-sky-400/35 bg-[#111c33] p-6 shadow-2xl space-y-4">
+      <div class="flex items-start justify-between gap-4 border-b border-slate-400/15 pb-3">
+        <div>
+          <span id="modal-category" class="inline-block rounded-full bg-sky-500/15 px-2.5 py-0.5 text-[11px] font-bold text-sky-300"></span>
+          <h3 id="modal-title" class="mt-1.5 text-lg font-extrabold text-white"></h3>
+        </div>
+        <button
+          type="button"
+          data-action="close-modal"
+          aria-label="Cerrar ventana"
+          class="rounded-xl border border-slate-400/20 bg-[#0c1322] p-2 text-slate-300 hover:text-white"
+        >
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="space-y-3 text-xs sm:text-sm text-slate-200">
+        <p id="modal-summary" class="leading-relaxed"></p>
+        <div class="rounded-2xl border border-slate-400/15 bg-[#0c1322] p-3.5 text-xs space-y-1">
+          <div><strong class="text-sky-400">Periodo de registro:</strong> <span id="modal-period"></span></div>
+          <div><strong class="text-sky-400">Ámbito de aplicación:</strong> <span id="modal-scope"></span></div>
+        </div>
+      </div>
+      <div class="flex justify-end pt-1">
+        <button
+          type="button"
+          data-action="close-modal"
+          class="rounded-xl bg-sky-500 px-4 py-2 text-xs font-bold text-[#070b12] hover:bg-sky-400"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="Js/accion.js"></script>
+</body>
+</html>

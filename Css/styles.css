@@ -1,0 +1,223 @@
+/* Estilos base y paleta oscura azulada con blancos nítidos */
+    body {
+      background-color: #070b12;
+      color: #ffffff;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Fondo sutil de cuadrícula técnica y resplandor azul eléctrico */
+    .bg-tech-grid {
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(14, 165, 233, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.09) 0%, transparent 42%),
+        linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+    }
+
+    /* Animaciones suaves de aparición al hacer scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .print-resume {
+      display: none;
+    }
+
+    /* Estilos de impresión / guardar como PDF */
+    @page {
+      size: A4 portrait;
+      margin: 13mm 13mm 14mm;
+    }
+
+    @media print {
+      html,
+      body {
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+        background: #ffffff !important;
+        color: #0f172a !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 10.5pt;
+      }
+      .no-print,
+      header nav,
+      #mobile-menu,
+      #detail-modal,
+      #toast-banner,
+      #top,
+      body > footer {
+        display: none !important;
+      }
+      .print-break-avoid {
+        break-inside: avoid;
+      }
+      .bg-tech-grid {
+        background: none !important;
+      }
+      section, article {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        border-color: #cbd5e1 !important;
+        box-shadow: none !important;
+      }
+      .text-white, .text-slate-200, .text-slate-300, .text-slate-400 {
+        color: #0f172a !important;
+      }
+      .text-sky-400, .text-sky-300 {
+        color: #0369a1 !important;
+      }
+      #print-resume {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 4mm;
+        width: 100%;
+        min-height: 263mm;
+        margin: 0;
+        padding: 0;
+        color: #0f172a !important;
+        font: 10.5pt/1.38 Arial, Helvetica, sans-serif !important;
+      }
+      #print-resume * {
+        box-sizing: border-box;
+      }
+      #print-resume .print-resume-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6mm;
+        border-top: 5px solid #0e7490;
+        border-bottom: 2px solid #0e7490;
+        padding: 4mm 0;
+      }
+      #print-resume .print-resume-header > div {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+      #print-resume .print-resume-eyebrow {
+        margin: 0 0 2mm;
+        color: #0e7490;
+        font-size: 8.5pt;
+        font-weight: 700;
+        letter-spacing: 1.4pt;
+        text-transform: uppercase;
+      }
+      #print-resume h1 {
+        margin: 0;
+        color: #0f172a !important;
+        font-size: 22pt;
+        line-height: 1.1;
+      }
+      #print-resume .print-resume-role {
+        margin: 2mm 0 0;
+        color: #334155 !important;
+        font-size: 10pt;
+        font-weight: 600;
+      }
+      #print-resume .print-resume-contact {
+        display: flex;
+        flex: 0 0 56mm;
+        flex-direction: column;
+        gap: 1.5mm;
+        border-left: 1px solid #cbd5e1;
+        padding: 1mm 0 1mm 4mm;
+        color: #334155 !important;
+        font-size: 9pt;
+        font-style: normal;
+        text-align: right;
+      }
+      #print-resume .print-resume-contact a {
+        color: #0e7490 !important;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 9.5pt;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      #print-resume .print-resume-section {
+        margin: 0;
+      }
+      #print-resume h2 {
+        margin: 0 0 2.5mm;
+        border-bottom: 1px solid #cbd5e1;
+        border-left: 3px solid #0891b2;
+        padding: 0 0 1.5mm 2.5mm;
+        color: #0e7490 !important;
+        font-size: 10.5pt;
+        font-weight: 800;
+        letter-spacing: 0.8pt;
+        text-transform: uppercase;
+      }
+      #print-resume p {
+        margin: 0 0 2mm;
+        color: #334155 !important;
+      }
+      #print-resume .print-resume-jobs,
+      #print-resume .print-resume-columns {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8mm;
+        align-items: start;
+      }
+      #print-resume .print-resume-jobs {
+        grid-template-columns: 1fr;
+        gap: 4mm;
+      }
+      #print-resume .print-resume-job {
+        break-inside: avoid;
+        border: 1px solid #dbe4ea;
+        border-left: 3px solid #0891b2;
+        background: #f8fafc !important;
+        padding: 2.5mm 3.5mm;
+      }
+      #print-resume .print-resume-job-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 4mm;
+      }
+      #print-resume .print-resume-job h3 {
+        margin: 0;
+        color: #0f172a !important;
+        font-size: 10.5pt;
+      }
+      #print-resume .print-resume-job-heading span {
+        flex: 0 0 auto;
+        color: #475569 !important;
+        font-size: 8pt;
+      }
+      #print-resume .print-resume-job-title {
+        margin: 1mm 0 2mm;
+        color: #0e7490 !important;
+        font-size: 9.5pt;
+        font-weight: 700;
+      }
+      #print-resume ul {
+        margin: 1mm 0 0;
+        padding-left: 5mm;
+      }
+      #print-resume li {
+        margin: 0 0 1.5mm;
+        color: #334155 !important;
+      }
+      #print-resume .print-resume-columns {
+        margin-top: 0;
+      }
+      #print-resume strong {
+        color: #0f172a !important;
+      }
+      #print-resume .print-resume-section,
+      #print-resume .print-resume-columns {
+        break-inside: avoid;
+      }
+    }
